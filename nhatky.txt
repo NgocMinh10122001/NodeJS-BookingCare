@@ -1,0 +1,93 @@
+I) npm (--save - luu ti thu muc)
+_ body-parser : lay tham so client gui len server 
+
+    vidu: client truyen tren url (/minhdz/:id)
+
+_ dotenv : lay cac tham so khai bao trong moi truong 
+_ ejs : ho tro viewEngine(mot man hinh ho tro ben backend cho nodejs xu ly du lieu) - ejs 
+_ express : la framework giup chay project nay 
+_ --save-dev @babel/core @babel/node @babel/preset-env : trinh combine(dich) cua nodejs(js)
+_ nodemon : thay doi file thi server reset 
+
+
+II) cau truc du an : 
+
+_ file server.js : dung de chay server 
+
+_ controller : noi xu ly
+
+_ services : noi choc den database 
+
+_ config : noi cau hinh tham so cua du an
+ 
+_ views : luu cac fiel html
+
+_ public : file public (css)
+
+_ route : noi viet cac router va route , path 
+
+_ file .env : de cau hinh cac tham so moi truong
+
+    PORT = 8080
+
+_ file .env.example : de day len github (giong .env nhung ko co gia tri)
+
+    PORT = 
+
+_ file gitignore : quy dinh nhung file khong muon public ra ngoai (day len git)
+
+    /node_modules
+    /vendor
+    /.idea
+    .idea/
+    .env
+
+_ file babelrc : cau hinh combine 
+
+    {
+    "presets": ["@babel/preset-env"],
+    }
+
+
+III)  Tao model
+
+cau hinh sequelize
+
+_ npm i --save sequelize-cli 
+_ npm i --save sequelize
+
+_ ../node_modules/.bin/sequelize init (tao trong thu muc src)
+
+👉 1. Tạo model: 
+npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string
+
+👉 2: Tạo migrations:
+npx sequelize-cli db:migrate
+
+👉3. Tạo Seeder: npx sequelize-cli seed:generate --name demo-user 
+
+IV ) connect to database with sequelize - Render data to view 
+
+_ using doc by https://sequelize.org/docs/v6/getting-started/
+
+_ (usually choose option 3 in doc connect database with sequelize)
+_ if you want passing or transmission big project to host you can choose option 1
+
+V ) luu y 
+
+Obj :
+
+muon su dung duoc key trong Obj thi phai dung cu phap 
+vi du user = "user" (chuoi string thi dung nhu ben duoi)
+this.setState({
+    [user] : value
+})
+
+this.state.user === this.state['user']
+
+...Obj (copy)
+...Obj, user (thay the ptu user trong Obj)
+
+Arr : 
+...Arr (clone array)
+...Arr.push(user) (them ptu vao trog Arr)
